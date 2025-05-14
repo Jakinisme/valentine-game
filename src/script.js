@@ -14,21 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let yesButtonScale = 1;
     const scaleIncrement = 0.2;
     
-    // Initialize the game
-    function initGame() {
-        // Set up event listeners
-        submitUsernameBtn.addEventListener('click', submitUsername);
-        yesButton.addEventListener('click', handleYesClick);
-        noButton.addEventListener('click', handleNoClick);
-        
-        // Allow Enter key to submit username
-        usernameInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                submitUsername();
-            }
-        });
-    }
-    
     // Handle username submission
     function submitUsername() {
         const username = usernameInput.value.trim();
@@ -53,6 +38,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hide username section and show question section
         usernameSection.classList.add('hidden');
         questionSection.classList.remove('hidden');
+    }
+        
+        // Initialize the game
+    function initGame() {
+        // Set up event listeners
+        submitUsernameBtn.addEventListener('click', submitUsername);
+        yesButton.addEventListener('click', handleYesClick);
+        noButton.addEventListener('click', handleNoClick);
+        
+        // Allow Enter key to submit username
+        usernameInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                submitUsername();
+            }
+        });
     }
     
     // Handle Yes button click
@@ -154,9 +154,8 @@ window.addEventListener('DOMContentLoaded', () => {
         successSound.play().catch(e => console.log('Error playing sound:', e));
     }, { once: true });
     
-    // Try to play sound automatically, but this might be blocked by browser
+    // Catch error
     successSound.play().catch(e => console.log('Auto-play was prevented. Click anywhere to play sound.'));
-    
-    // Create falling hearts animation
+
     createHearts();
 });

@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine's Day Game</title>
     <link rel="stylesheet" href="assets/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
 </head>
 <body>
+
     <div class="container">
         <div id="username-section" class="section">
             <h1>Happy Valentine's Day, Babyyy!</h1>
@@ -27,6 +29,20 @@
         </div>
     </div>
 
+    <audio id="romantic-song" src="assets/audio/song.mp3" autoplay loop></audio>
+
+    <script> 
+    window.addEventListener('DOMContentLoaded', () => {
+    const romanticSong = document.getElementById('romantic-song');
+    // Try to play sound with user interaction
+    document.body.addEventListener('click', function() {
+        romanticSong.play().catch(e => console.log('Error playing sound:', e));
+    }, { once: true });
+    // Catch error
+    romanticSong.play().catch(e => console.log('Auto-play was prevented. Click anywhere to play sound.'));
+})
+    </script>
     <script src="src/script.js"></script>
+
 </body>
 </html> 
