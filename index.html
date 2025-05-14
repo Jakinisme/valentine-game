@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Game</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="username-section" class="section">
+            <h1>Happy Valentine's Day, Babyyy!</h1>
+            <div class="input-group">
+                <label for="username">Please enter your name:</label>
+                <input type="text" id="username" placeholder="name">
+                <button id="submit-username">Submit</button>
+            </div>
+        </div>
+
+        <div id="question-section" class="section hidden">
+            <h1 id="greeting"></h1>
+            <h2>Will you be my Valentine?</h2>
+            <div class="button-container">
+                <button id="yes-button" class="answer-button">Yes</button>
+                <button id="no-button" class="answer-button">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/script.js"></script>
+</body>
+</html> 
