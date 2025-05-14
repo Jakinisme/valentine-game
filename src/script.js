@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Handle Yes button click
     function handleYesClick() {
-        window.location.href = 'src/success.html';
+        window.location.href = 'success.html';
     }
     
     // Handle No button click
@@ -112,3 +112,52 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize the game
     init();
 }); 
+
+// Play the sound when the page loads
+window.addEventListener('DOMContentLoaded', () => {
+    const successSound = document.getElementById('success-sound');
+    // Try to play sound with user interaction
+    document.body.addEventListener('click', function() {
+        successSound.play().catch(e => console.log('Error playing sound:', e));
+    }, { once: true });
+    
+    // Try to play sound automatically, but this might be blocked by browser
+    successSound.play().catch(e => console.log('Auto-play was prevented. Click anywhere to play sound.'));
+    
+    // Create falling hearts animation
+    createHearts();
+});
+
+// Create falling hearts in the background
+function createHearts() {
+    const heartsContainer = document.getElementById('hearts');
+    const heartSymbols = ['❤️', '💕', '💗', '💖', '💘'];
+    const numberOfHearts = 50;
+
+    for (let i = 0; i < numberOfHearts; i++) {
+        setTimeout(() => {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+            
+            // Random position, size, and animation duration
+            const left = Math.random() * 100;
+            const size = Math.random() * 2 + 1;
+            const duration = Math.random() * 10 + 5;
+            
+            heart.style.left = `${left}%`;
+            heart.style.fontSize = `${size}rem`;
+            heart.style.animationDuration = `${duration}s`;
+            
+            heartsContainer.appendChild(heart);
+            
+            // Remove heart after animation completes
+            setTimeout(() => {
+                heart.remove();
+            }, duration * 1000);
+        }, i * 200);
+    }
+    
+    // Continue creating hearts
+    setTimeout(createHearts, numberOfHearts * 200);
+}
