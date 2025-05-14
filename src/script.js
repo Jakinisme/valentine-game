@@ -112,21 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initGame();
 }); 
 
-// Play the sound when the page loads
-window.addEventListener('DOMContentLoaded', () => {
-    const successSound = document.getElementById('success-sound');
-    // Try to play sound with user interaction
-    document.body.addEventListener('click', function() {
-        successSound.play().catch(e => console.log('Error playing sound:', e));
-    }, { once: true });
-    
-    // Try to play sound automatically, but this might be blocked by browser
-    successSound.play().catch(e => console.log('Auto-play was prevented. Click anywhere to play sound.'));
-    
-    // Create falling hearts animation
-    createHearts();
-});
-
 // Create falling hearts in the background
 function createHearts() {
     const heartsContainer = document.getElementById('hearts');
@@ -160,3 +145,18 @@ function createHearts() {
     // Continue creating hearts
     setTimeout(createHearts, numberOfHearts * 200);
 }
+
+// Play the sound when the page loads
+window.addEventListener('DOMContentLoaded', () => {
+    const successSound = document.getElementById('success-sound');
+    // Try to play sound with user interaction
+    document.body.addEventListener('click', function() {
+        successSound.play().catch(e => console.log('Error playing sound:', e));
+    }, { once: true });
+    
+    // Try to play sound automatically, but this might be blocked by browser
+    successSound.play().catch(e => console.log('Auto-play was prevented. Click anywhere to play sound.'));
+    
+    // Create falling hearts animation
+    createHearts();
+});
