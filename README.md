@@ -5,6 +5,7 @@ A fun interactive Valentine's Day game where users are asked to be your Valentin
 ## Features
 
 - Username input
+- Song played while entering
 - Valentine's proposal question
 - "Yes" button that grows larger when "No" is clicked
 - "No" button that moves randomly around the screen when clicked
@@ -17,6 +18,7 @@ A fun interactive Valentine's Day game where users are asked to be your Valentin
 2. Add the following files to your `assets` folder:
    - `cat.jpg` - A cute cat image that displays when "Yes" is clicked
    - `yay.mp3` - A celebratory sound that plays when "Yes" is clicked
+   - `song.mp3` - A song that will be played while entering
 3. Open `index.html` in your web browser to start the game
 
 ## How to Play
@@ -33,8 +35,10 @@ A fun interactive Valentine's Day game where users are asked to be your Valentin
 - `success.html` - The success page shown after clicking "Yes"
 - `src/script.js` - JavaScript code for the game logic
 - `assets/styles.css` - CSS styles for the game
-- `assets/cat.jpg` - Cat image for the success page
-- `assets/yay.mp3` - Sound effect for the success page
+- `assets/success.css`- CSS for success page
+- `assets/img/cat.jpg` - Cat image for the success page
+- `assets/audio/song.mp3` - Song that will be played while entering
+- `assets/audio/yay.mp3` - Sound effect for the success page
 
 ## Technologies Used
 
