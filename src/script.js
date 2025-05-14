@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const scaleIncrement = 0.2;
     
     // Initialize the game
-    function init() {
+    function initGame() {
         // Set up event listeners
         submitUsernameBtn.addEventListener('click', submitUsername);
         yesButton.addEventListener('click', handleYesClick);
@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.querySelector('.button-container');
         const containerRect = container.getBoundingClientRect();
         
-        // Use percentage values to better handle different screen sizes
         // Keep the button within the viewport
         const maxLeft = Math.max(window.innerWidth - 150, containerRect.width);
         const maxTop = Math.max(window.innerHeight - 100, containerRect.height);
@@ -110,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Initialize the game
-    init();
+    initGame();
 }); 
 
 // Play the sound when the page loads
