@@ -34,6 +34,8 @@ A fun interactive Valentine's Day game where users are asked to be your Valentin
 - `index.html` - The main game page with username input and Valentine's question
 - `success.html` - The success page shown after clicking "Yes"
 - `src/script.js` - JavaScript code for the game logic
+- `src/popup.js` - JavaScript code for custom pop-up box
+- `assets/popup.css` - CSS style for custom pop-up box
 - `assets/styles.css` - CSS styles for the game
 - `assets/success.css`- CSS for success page
 - `assets/img/cat.jpg` - Cat image for the success page

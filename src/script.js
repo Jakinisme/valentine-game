@@ -10,25 +10,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const yesButton = document.getElementById('yes-button');
     const noButton = document.getElementById('no-button');
     
-    // Variables to track button size and position
+    // Variables to track button size
     let yesButtonScale = 1;
     const scaleIncrement = 0.2;
     
-    // Handle username submission
+    // Handle username submission   
     function submitUsername() {
         const username = usernameInput.value.trim();
         
+        // Check the username conditions
         if (username === '') {
-            alert('Please enter your username, babyyy!');
+            showAlert('Please enter your username honey');
             return;
         } else if (username.length <= 4) {
-            alert('Please enter a username longer than 4 characters, babyyy!');
+            showAlert('Please enter a username longer than 4 characters darlin');
             return;
         } else if (username.length >= 10) {
-            alert('Please enter a username shorter than 10 characters, babyyy!');
+            showAlert('Please enter a username shorter than 10 characters darlin');
             return;
         } else if (!isNaN(username)) {
-            alert('Please enter a valid username, babyyy!');
+            showAlert('Please enter a valid username sweetie');
             return;
         }
         
@@ -68,11 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Limit the maximum scale to avoid crashing browsers
         const maxScale = 4;
         const actualScale = Math.min(yesButtonScale, maxScale);
-        
-        // Apply the new scale to the Yes button
+  
         yesButton.style.transform = `scale(${actualScale})`;
         
-        // Move the No button to a random position
         moveNoButtonRandomly();
         
         // If the Yes button gets very large, make it fill most of the screen
@@ -95,28 +94,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.querySelector('.button-container');
         const containerRect = container.getBoundingClientRect();
         
-        // Keep the button within the viewport
         const maxLeft = Math.max(window.innerWidth - 150, containerRect.width);
         const maxTop = Math.max(window.innerHeight - 100, containerRect.height);
         
         const randomLeft = Math.floor(Math.random() * maxLeft);
         const randomTop = Math.floor(Math.random() * maxTop);
         
-        // Apply random position
         noButton.style.position = 'fixed';
         noButton.style.left = `${randomLeft}px`;
         noButton.style.top = `${randomTop}px`;
     }
     
-    // Initialize the game
     initGame();
 }); 
 
 // Create falling hearts in the background
 function createHearts() {
     const heartsContainer = document.getElementById('hearts');
-    const heartSymbols = ['❤️', '💕', '💗', '💖', '💘'];
-    const numberOfHearts = 50;
+    const heartSymbols = ['❤️', '💕', '💗', '💖', '💘', '💞', '💓'];
+    const numberOfHearts = 100;
 
     for (let i = 0; i < numberOfHearts; i++) {
         setTimeout(() => {
@@ -159,3 +155,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
     createHearts();
 });
+
+    window.addEventListener('DOMContentLoaded', () => {
+    const romanticSong = document.getElementById('romantic-song');
+
+    document.body.addEventListener('click', function() {
+        romanticSong.play().catch(e => console.log('Error playing sound:', e));
+    }, { once: true });
+    
+    romanticSong.play().catch(e => console.log('Auto-play was prevented. Click anywhere to play sound.'));
+
+    createHearts();
+})

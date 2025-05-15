@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine's Day Game</title>
     <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/popup.css">
 </head>
 <body>
 
@@ -29,20 +31,18 @@
         </div>
     </div>
 
-    <audio id="romantic-song" src="assets/audio/song.mp3" autoplay loop></audio>
+   <div class="alert-overlay" id="alertPopup">
+        <div class="alert-box">
+            <i class="fas fa-info-circle alert-icon"></i>
+            <h2 class="alert-title">Alert!</h2>
+            <p class="alert-message" id="alertMessage"></p>
+            <button class="alert-button" onclick="closeAlert()">OK</button>
+        </div>
+    </div>
 
-    <script> 
-    window.addEventListener('DOMContentLoaded', () => {
-    const romanticSong = document.getElementById('romantic-song');
-    // Try to play sound with user interaction
-    document.body.addEventListener('click', function() {
-        romanticSong.play().catch(e => console.log('Error playing sound:', e));
-    }, { once: true });
-    // Catch error
-    romanticSong.play().catch(e => console.log('Auto-play was prevented. Click anywhere to play sound.'));
-})
-    </script>
+    <audio id="romantic-song" src="assets/audio/song.mp3" autoplay loop></audio>
     <script src="src/script.js"></script>
+    <script src="src/popup.js"></script>
 
 </body>
 </html> 
