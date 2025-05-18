@@ -149,21 +149,16 @@ window.addEventListener('DOMContentLoaded', () => {
     document.body.addEventListener('click', function() {
         successSound.play().catch(e => console.log('Error playing sound:', e));
     }, { once: true });
-    
     // Catch error
     successSound.play().catch(e => console.log('Auto-play was prevented. Click anywhere to play sound.'));
 
     createHearts();
 });
 
-    window.addEventListener('DOMContentLoaded', () => {
     const romanticSong = document.getElementById('romantic-song');
-
+    window.addEventListener('DOMContentLoaded', () => {
     document.body.addEventListener('click', function() {
         romanticSong.play().catch(e => console.log('Error playing sound:', e));
     }, { once: true });
-    
     romanticSong.play().catch(e => console.log('Auto-play was prevented. Click anywhere to play sound.'));
-
-    createHearts();
 })
