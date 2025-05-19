@@ -148,6 +148,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // Try to play sound with user interaction
     document.body.addEventListener('click', function() {
         successSound.play().catch(e => console.log('Error playing sound:', e));
+        showAlert('Click anywhere to play sound');
     }, { once: true });
     // Catch error
     successSound.play().catch(e => console.log('Auto-play was prevented. Click anywhere to play sound.'));
@@ -155,10 +156,13 @@ window.addEventListener('DOMContentLoaded', () => {
     createHearts();
 });
 
-    const romanticSong = document.getElementById('romantic-song');
     window.addEventListener('DOMContentLoaded', () => {
+    const romanticSong = document.getElementById('romantic-song');
+
     document.body.addEventListener('click', function() {
         romanticSong.play().catch(e => console.log('Error playing sound:', e));
+        showAlert('Click anywhere to play sound');
     }, { once: true });
+
     romanticSong.play().catch(e => console.log('Auto-play was prevented. Click anywhere to play sound.'));
 })
